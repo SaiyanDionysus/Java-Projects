@@ -1,6 +1,7 @@
 package org.example.javafx;
 
 import javafx.application.Application;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
@@ -29,7 +30,21 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root, 300, 250);
 
         stage.setScene(scene);
-        stage.setTitle("ComboBox in JavaFX");
+        stage.setTitle("JavaFX");
+        stage.show();
+
+
+        ObservableList<String> newlangs = FXCollections.observableArrayList("Java", "JavaScript");
+        ChoiceBox<String> langsChoiceBox = new ChoiceBox<String>(newlangs);
+        langsChoiceBox.setValue("Java");
+
+        Label lblLbl = new Label();
+        langsChoiceBox.setOnAction(event -> lblLbl.setText((langsChoiceBox.getValue())));
+        FlowPane rootRoot = new FlowPane(10, 10, langsChoiceBox, lblLbl);
+
+        Scene newScene = new Scene(rootRoot, 300, 250);
+
+        stage.setScene(newScene);
         stage.show();
     }
 }
