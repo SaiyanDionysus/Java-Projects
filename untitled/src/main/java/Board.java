@@ -1,4 +1,3 @@
-package com.code;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -57,7 +56,7 @@ public class Board extends JPanel implements ActionListener {
         initGame();
     }
 
-    private void loadImage() {
+    private void loadImages() {
 
         ImageIcon iid = new ImageIcon("src/resources/dot.png");
         ball = iid.getImage();
@@ -65,8 +64,8 @@ public class Board extends JPanel implements ActionListener {
         ImageIcon iia = new ImageIcon("src/resources/apple.png");
         apple = iid.getImage();
 
-        ImageIcon iid = new ImageIcon("src/resources/head.png");
-        head = iid.getImage();
+        ImageIcon iih = new ImageIcon("src/resources/head.png");
+        head = iih.getImage();
     }
 
     private void initGame() {
@@ -183,9 +182,9 @@ public class Board extends JPanel implements ActionListener {
         r = (int) (Math.random() * RAND_POS);
         apple_y = ((r * DOT_SIZE));
     }
-
+    
     @Override
-    public void actionPerfomed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         if (inGame) {
             checkApple();
             checkCollision();
