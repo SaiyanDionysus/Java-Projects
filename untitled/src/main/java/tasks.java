@@ -1,17 +1,19 @@
-// Write a Java program to print 'Hello' on screen and your name on a separate line.
+//Write a Java program to print the sum of two numbers.
+//Test Data:
+//74 + 36
 //Expected Output :
-//Hello
-//Alexandra Abramov
+//110
 
 import java.util.*;
 
 public class tasks {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите свое имя: ");
-        String fname = scanner.next();
-        System.out.print("Введите фамилию: ");
-        String lname = scanner.next();
-        System.out.print("Hello \n" + fname + " " + lname);
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        int result = num1 + num2;
+        System.out.println("Sum of the numbers: " + result);
     }
 }
