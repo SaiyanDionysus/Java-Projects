@@ -31,4 +31,26 @@ public class UserResourse {
         users.put(user.getId(), user);
         return Response.status(Response.Status.CREATED).build();
     }
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateUser(@PathParam("id") String id, User user) {
+        if (users.containsKey(id)) {
+            users.put(id, user);
+            return Response.status(Response.Status.OK).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+    @DELETE
+    @Path("/{id}")
+    public Response deleteUser(@PathParam("id") String id) {
+        if (users.containsKey(id)) {
+            users.remove(id);
+            return Response.status(Response.Status.OK).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
 }
