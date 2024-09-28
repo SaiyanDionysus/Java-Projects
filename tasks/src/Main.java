@@ -3,7 +3,8 @@ import java.util.*;
 /**
  *
  * @author Denis
- */
+ *
+ **/
 public class Main {
     protected void timerSleep() {
         try {
